@@ -10,8 +10,6 @@ import fs from "node:fs/promises";
 await fs.mkdir(path.dirname(DATABASE_URL), { recursive: true });
 
 const sqlite = new Database(DATABASE_URL);
-sqlite.run("PRAGMA foreign_keys = ON;");
-
 export const db = drizzle({ client: sqlite, schema });
 
 export const runDbMigrations = () => {
@@ -23,4 +21,6 @@ export const runDbMigrations = () => {
 	}
 
 	migrate(db, { migrationsFolder });
+
+	sqlite.run("PRAGMA foreign_keys = ON;");
 };
