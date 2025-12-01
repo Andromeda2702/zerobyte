@@ -263,12 +263,7 @@ const executeBackup = async (scheduleId: number, manual = false) => {
 		}
 
 		if (schedule.retentionPolicy) {
-			const releaseForgetLock = await repoMutex.acquireExclusive(repository.id, `forget:${volume.name}`);
-			try {
-				await restic.forget(repository.config, schedule.retentionPolicy, { tag: schedule.id.toString() });
-			} finally {
-				releaseForgetLock();
-			}
+			void runForget(schedule.id);
 		}
 
 		const nextBackupAt = calculateNextRun(schedule.cronExpression);
@@ -415,7 +410,7 @@ const runForget = async (scheduleId: number) => {
 		throw new NotFoundError("Repository not found");
 	}
 
-	logger.info(`Manually running retention policy (forget) for schedule ${scheduleId}`);
+	logger.info(`running retention policy (forget) for schedule ${scheduleId}`);
 	const releaseLock = await repoMutex.acquireExclusive(repository.id, `forget:manual:${scheduleId}`);
 	try {
 		await restic.forget(repository.config, schedule.retentionPolicy, { tag: schedule.id.toString() });
