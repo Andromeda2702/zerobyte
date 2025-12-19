@@ -16,7 +16,10 @@ export const getCronExpression = (frequency: string, dailyTime?: string, weeklyD
 	}
 	
 	if (frequency === "monthly") {
-        const sortedDays = (monthlyDays || []).map(Number).sort((a, b) => a - b);
+        const sortedDays = (monthlyDays || [])
+            .map(Number)
+            .filter((day) => day >= 1 && day <= 31)
+            .sort((a, b) => a - b);
         const days = sortedDays.length > 0 ? sortedDays.join(",") : "1";
         return `${minutes} ${hours} ${days} * *`;
     }
