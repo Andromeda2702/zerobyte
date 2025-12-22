@@ -28,9 +28,15 @@ export const RepositorySnapshotsTabContent = ({ repository }: Props) => {
 	const filteredSnapshots = data.filter((snapshot: Snapshot) => {
 		if (!searchQuery) return true;
 		const searchLower = searchQuery.toLowerCase();
+
+		const backupIds = snapshot.tags.map(Number).filter((tag) => !Number.isNaN(tag));
+		const backup = schedules.data?.find((b) => backupIds.includes(b.id));
+
 		return (
 			snapshot.short_id.toLowerCase().includes(searchLower) ||
-			snapshot.paths.some((path) => path.toLowerCase().includes(searchLower))
+			snapshot.paths.some((path) => path.toLowerCase().includes(searchLower)) ||
+			backup?.name?.toLowerCase().includes(searchLower) ||
+			backup?.volume?.name?.toLowerCase().includes(searchLower)
 		);
 	});
 
